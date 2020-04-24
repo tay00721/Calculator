@@ -25,19 +25,19 @@ class ViewController: UIViewController {
     @IBAction func numberPressing(_ sender: UIButton) {
         if numberOperation == true {
             numberLabel.text = String(sender.tag-1)
-            lastNumber = Double(numberLabel.text!)!
             numberOperation = false
+            lastNumber = Double(numberLabel.text!)!
         }
         else {
-            if let text = numberLabel.text {
                 numberLabel.text = numberLabel.text! + String(sender.tag-1)
-                lastNumber = Double(numberLabel.text!)! }
+            if let numberText = numberLabel.text, let number = Double(numberText){
+                 lastNumber =  number }
         }
-    }
-    
+        }
     @IBAction func operationPressing(_ sender: UIButton) {
     if numberLabel.text != " " && sender.tag != 17 && sender.tag != 18 {
-        previousNumber =  Double(numberLabel.text!)!
+        if let numberTextV2 = numberLabel.text, let numberV2 = Double(numberTextV2){
+            previousNumber =  numberV2 }
         if sender.tag == 11 {
             numberLabel.text =  "+"
         }
