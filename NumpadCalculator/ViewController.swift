@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     @IBAction func numberPressing(_ sender: UIButton) {
         if numberOperation == true {
             numberLabel.text = String(sender.tag-1)
-            numberOperation = false
             lastNumber = Double(numberLabel.text!)!
+            numberOperation = false
         }
         else {
                 numberLabel.text = numberLabel.text! + String(sender.tag-1)
@@ -34,8 +34,21 @@ class ViewController: UIViewController {
                  lastNumber =  number }
         }
         }
+    
+    
+    @IBAction func clearingPressing(_ sender: UIButton) {
+        if sender.tag == 18 {
+            numberLabel.text = " "
+            previousNumber = 0
+            lastNumber = 0
+            operation = 0
+            numberOperation = false
+    }
+    
+}
     @IBAction func operationPressing(_ sender: UIButton) {
-    if numberLabel.text != " " && sender.tag != 17 && sender.tag != 18 {
+
+        if numberLabel.text != nil && sender.tag != 17 && sender.tag != 20 {
         if let numberTextV2 = numberLabel.text, let numberV2 = Double(numberTextV2){
             previousNumber =  numberV2 }
         if sender.tag == 11 {
@@ -56,7 +69,7 @@ class ViewController: UIViewController {
         operation = sender.tag
         numberOperation = true
         }
-    else if sender.tag == 16 {
+     if sender.tag == 16 {
         numberLabel.text = String(Double(numberLabel.text!)! * (-1))
         }
     else if sender.tag == 17 {
@@ -72,16 +85,12 @@ class ViewController: UIViewController {
         if operation == 14 {
             numberLabel.text = String(previousNumber / lastNumber)
         }
-        if operation == 15 {
-            let percent:Double =  (previousNumber / lastNumber)
-            numberLabel.text = String(percent.truncatingRemainder(dividingBy: Double(percent)))
+       else if operation == 15 {
+            numberLabel.text = String(previousNumber * lastNumber / 100)
         }
         }
-    else if sender.tag == 18 {
-        numberLabel.text = " "
-        previousNumber = 0
-        lastNumber = 0
-        operation = 0
+       else if sender.tag == 20 {
+            numberLabel.text = numberLabel.text! + "."
         }
     }
     

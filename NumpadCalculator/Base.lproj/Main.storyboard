@@ -29,7 +29,7 @@
                                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="operationPressing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1lU-lr-BqA"/>
+                                                    <action selector="clearingPressing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cYu-7Z-acy"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFs-hJ-2Xh">
@@ -251,6 +251,9 @@
                                                 <state key="normal" title=".">
                                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="operationPressing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jEu-be-epL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ig-bm-E24">
                                                 <rect key="frame" x="288" y="0.0" width="87" height="94"/>
